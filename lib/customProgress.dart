@@ -10,15 +10,8 @@ class CustomProgress extends StatefulWidget {
 }
 
 class _CustomProgressState extends State<CustomProgress> {
-  double _size = 150;
-  late Timer _timer;
-  double _value = 10;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  double _value = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +19,6 @@ class _CustomProgressState extends State<CustomProgress> {
     var height=MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor:Color(0xff1C2431),
-
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

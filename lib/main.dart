@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/profileWithProgressBar.dart';
+import 'circularCharts.dart';
 import 'customProgress.dart';
 import 'myHomePage.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CustomProgress(),
+      home: ProfileWithProgressBar(),
       debugShowCheckedModeBanner: false,
     );
   }
