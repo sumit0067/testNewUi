@@ -43,7 +43,7 @@ abstract class SampleViewState extends State<SampleView> {
 class ChartSampleData {
   /// Holds the datapoint values like x, y, etc.,
   ChartSampleData(
-      {this.x,
+      {
         this.y,
         this.xValue,
         this.yValue,
@@ -59,7 +59,7 @@ class ChartSampleData {
         this.volume});
 
   /// Holds x value of the datapoint
-  final dynamic x;
+  //final dynamic x;
 
   /// Holds y value of the datapoint
   final dynamic y;

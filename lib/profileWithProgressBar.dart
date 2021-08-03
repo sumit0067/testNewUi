@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import 'circularCharts.dart';
+import 'model/sample_view.dart';
+
 
 
 class ProfileWithProgressBar extends StatefulWidget {
@@ -15,13 +16,8 @@ class _ProfileWithProgressBarState extends State<ProfileWithProgressBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _buildCustomizedRadialBarChart());
-  }
-
-  SfCircularChart _buildCustomizedRadialBarChart() {
-
-
-    return SfCircularChart(
+    return Scaffold(body:
+    SfCircularChart(
       legend: Legend(
         isVisible: true,
         overflowMode: LegendItemOverflowMode.wrap,
@@ -37,25 +33,18 @@ class _ProfileWithProgressBarState extends State<ProfileWithProgressBar> {
                     child: SfCircularChart(
                       series: <RadialBarSeries<ChartSampleData, String>>[
                         RadialBarSeries<ChartSampleData, String>(
-                            animationDuration: 0,
-                            maximumValue: 100,
-                            radius: '100%',
-                            cornerStyle: CornerStyle.bothCurve,
-                            xValueMapper: (ChartSampleData data, _) => point.x as String,
-                            yValueMapper: (ChartSampleData data, _) => data.y,
-                            gap: "5",
-                            pointColorMapper: (ChartSampleData data, _) => data.pointColor,
-                            innerRadius: '70%',
+                          animationDuration: 0,
+                          maximumValue: 100,
+                          radius: '100%',
+                          cornerStyle: CornerStyle.bothCurve,
+                          xValueMapper: (data, _) => '',
+                          yValueMapper: (data, _) => data.y,
+                          gap: "5",
+                          pointColorMapper: ( data, _) => data.pointColor,
+                          innerRadius: '70%',
                         )
                       ],
                     )),
-                // Container(
-                //     width: 72,
-                //     child: Text(
-                //       point.x,
-                //       style: TextStyle(
-                //           color: colors[index], fontWeight: FontWeight.bold),
-                //     )),
               ]));
         },
       ),
@@ -75,7 +64,7 @@ class _ProfileWithProgressBarState extends State<ProfileWithProgressBar> {
           ),
         ),
       ],
-    );
+    ));
   }
 
   /// Returns radial bar which need to be customized.
@@ -83,8 +72,7 @@ class _ProfileWithProgressBarState extends State<ProfileWithProgressBar> {
   _getRadialBarCustomizedSeries() {
     final List<ChartSampleData> chartData = <ChartSampleData>[
       ChartSampleData(
-          x: 'Vehicle',
-          y: 62.70,
+          y: 10,
           pointColor: const Color.fromRGBO(69, 186, 161, 1.0)),
 
     ];
@@ -97,12 +85,8 @@ class _ProfileWithProgressBarState extends State<ProfileWithProgressBar> {
         dataSource: chartData,
         cornerStyle: CornerStyle.bothCurve,
         innerRadius: '50%',
-        xValueMapper: (ChartSampleData data, _) => data.x as String,
+        xValueMapper: (ChartSampleData data, _) => '',
         yValueMapper: (ChartSampleData data, _) => data.y,
-        //pointRadiusMapper: (ChartSampleData data, _) => '',
-
-        /// Color mapper for each bar in radial bar series,
-        /// which is get from datasource.
         pointColorMapper: (ChartSampleData data, _) => data.pointColor,
         legendIconType: LegendIconType.circle,
       ),
