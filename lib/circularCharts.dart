@@ -12,13 +12,6 @@ class CircularCharts extends StatefulWidget {
 
 class _CircularChartsState extends State<CircularCharts> {
 
-  //_RadialBarDefaultState();
-
-  @override
-  void initState() {
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +24,6 @@ class _CircularChartsState extends State<CircularCharts> {
           height: 200,
           width: 200,
           child: SfCircularChart(
-
             series: _getRadialBarDefaultSeries(),
           ),
         ),
@@ -41,19 +33,15 @@ class _CircularChartsState extends State<CircularCharts> {
   List<RadialBarSeries<ChartSampleData, String>> _getRadialBarDefaultSeries() {
     final List<ChartSampleData> chartData = <ChartSampleData>[
       ChartSampleData(
-          x: 'abhay',
           y: 10,
           pointColor: const Color.fromRGBO(248, 177, 149, 1.0)),
       ChartSampleData(
-          x: 'sumit',
           y: 11,
           pointColor: const Color.fromRGBO(246, 114, 128, 1.0)),
       ChartSampleData(
-          x: 'amit',
           y: 12,
           pointColor: const Color.fromRGBO(61, 205, 171, 1.0)),
       ChartSampleData(
-          x: 'rahul',
           y: 13,
           pointColor: const Color.fromRGBO(1, 174, 190, 1.0)),
     ];
@@ -69,7 +57,7 @@ class _CircularChartsState extends State<CircularCharts> {
           gap: '5',
           useSeriesColor: false,
           radius: '90',
-          xValueMapper: (ChartSampleData data, _) => data.x as String,
+          xValueMapper: (ChartSampleData data, _) => '',
           yValueMapper: (ChartSampleData data, _) => data.y,
           pointColorMapper: (ChartSampleData data, _) => data.pointColor,
       ),
@@ -79,13 +67,12 @@ class _CircularChartsState extends State<CircularCharts> {
 }
 
 class ChartSampleData {
-  final dynamic x;
   final y;
   final Color? pointColor;
 
 
   ChartSampleData(
-      {this.x,
+      {
         this.y,
         this.pointColor,
         });

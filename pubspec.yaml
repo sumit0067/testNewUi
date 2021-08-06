@@ -31,6 +31,9 @@ dependencies:
   qr_code_scanner: ^0.5.2
   syncfusion_flutter_charts: ^19.2.49
   syncfusion_flutter_gauges: ^19.2.49
+  #video player
+  #flutter_vlc_player: ^6.0.2
+  video_viewer: ^1.2.5
 
 dev_dependencies:
   flutter_test:
